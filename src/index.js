@@ -10,11 +10,11 @@ module.exports = function check(str, bracketsConfig) {
   {
     for (j = 0; j < bracketsConfig.length; j++)
     {
-      if (str[i] == bracketsConfig[j][0]) 
-        arr.push(str[i]);
+      if (str[i] == bracketsConfig[j][1] && arr[arr.length - 1] == bracketsConfig[j][0])
+        arr.pop()
 
-      else if (str[i] == bracketsConfig[j][1] && arr[arr.length - 1] == bracketsConfig[j][0])
-          arr.pop();
+      else if (str[i] == bracketsConfig[j][0]) 
+          arr.push(str[i])
     }
   }
 
